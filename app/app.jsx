@@ -12,4 +12,4 @@ require('style!css!sass!ApplicationStyles')
 
 ReactDOM.render(<p>Boilerplate 3</p>, document.getElementById('app'));
 
-require('./redux-example.jsx');
+require('./redux-todo-example.jsx');
