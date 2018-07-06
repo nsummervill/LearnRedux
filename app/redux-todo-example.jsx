@@ -8,12 +8,25 @@ var stateDefault = {
   todos: []
 };
 var reducer = (state = stateDefault, action)=>{
-
-
-  return state;
+  switch(action.type){
+    case 'CHANGE_SEARCHTEXT':
+      return{
+        ...state,
+        searchText: action.searchText
+      };
+    default:
+      return state;
+  }
 };
 
 var store = redux.createStore(reducer);
 
 var currentState = store.getState();
 console.log('currentState', currentState);
+
+store.dispatch({
+  type: 'CHANGE_SEARCHTEXT',
+  searchText: 'Nick sucks at coding'
+});
+
+console.log('searchText should be Nick sucks at coding', store.getState());
